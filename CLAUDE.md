@@ -20,6 +20,7 @@ Build a high-converting landing page that:
 5. Emphasizes local service area (Summerlin, Las Vegas)
 
 ## Project Structure
+```
 vegas-wash/
 ├── index.html              # Main page markup
 ├── style.css               # All styling & responsive design
@@ -38,6 +39,7 @@ vegas-wash/
 │   └── SKILL.md    # Lead capture & conversion
 └── todo/
 └── tasks.md    # Development tasks & checklist
+```
 
 
 ## Technology Stack

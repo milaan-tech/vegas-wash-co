@@ -18,6 +18,7 @@ Vegas Wash Co. is a modern, fully responsive landing page website designed to sh
 - **Local Business Focus** — Emphasis on Summerlin & Las Vegas service area
 
 ## Project Structure
+```
 vegas-wash/
 ├── index.html           # Main landing page HTML
 ├── style.css            # Complete styling (responsive & interactive)
@@ -62,6 +63,7 @@ vegas-wash/
 │   └── SKILL.md
 └── todo/
 └── tasks.md
+```
 
 ## Technical Details
 
