@@ -267,17 +267,19 @@ a { text-decoration: none; color: inherit; }
 .pillar__desc { font-size: 15px; font-weight: 500; color: var(--muted); line-height: 1.5; }
 
 /* ── Serving Area ─────────────────────────────────── */
-.serving { position: relative; overflow: hidden; padding: 28px 0; }
+.serving { position: relative; overflow: hidden; padding: 20px 0; }
 .serving__map-bg { position: absolute; inset: 0; }
 .serving__map-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
 .serving__inner { position: relative; z-index: 1; }
 .serving__card { display: grid; grid-template-columns: 1fr 1fr; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 8px 40px rgba(0,0,0,.18); }
-.serving__content { padding: 28px 32px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
-.serving__pin-badge { width: 52px; height: 52px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+.serving__content { padding: 20px 28px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.serving__pin-row { display: flex; align-items: center; gap: 14px; }
+.serving__pin-badge { width: 52px; height: 52px; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .serving__pin-badge img { filter: brightness(0) invert(1); }
-.serving__eyebrow { font-family: var(--cond); font-weight: 800; font-size: 15px; letter-spacing: .15em; text-transform: uppercase; color: var(--blue); }
-.serving__heading { font-family: var(--cond); font-weight: 900; font-size: 36px; text-transform: uppercase; color: var(--navy); line-height: 1.05; }
-.serving__desc { font-size: 16px; font-weight: 500; color: var(--muted); line-height: 1.65; }
+.serving__title-stack { display: flex; flex-direction: column; gap: 0; }
+.serving__eyebrow { font-family: var(--cond); font-weight: 800; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); line-height: 1.2; }
+.serving__heading { font-family: var(--cond); font-weight: 900; font-size: 36px; text-transform: uppercase; color: var(--blue); line-height: 1.05; }
+.serving__desc { font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.6; }
 .serving__map { overflow: hidden; }
 .serving__map-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .map-card { position: relative; width: 260px; height: 180px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.15); border-radius: 12px; backdrop-filter: blur(4px); }
