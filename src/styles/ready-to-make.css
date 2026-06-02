@@ -1,0 +1,159 @@
+/* ============================================================
+   Ready To Make Your Home — CTA Banner
+   ============================================================ */
+
+.ready-to-make {
+  position: relative;
+  background-color: #1A56DB;
+  padding: 18px 24px;
+  overflow: hidden;
+}
+
+.ready-to-make__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* --- Left: Illustration --- */
+.ready-to-make__illustration {
+  flex: 0 0 auto;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ready-to-make__illustration svg {
+  display: block;
+  width: 150px;
+  height: auto;
+}
+
+/* --- Middle: Text block --- */
+.ready-to-make__text {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ready-to-make__line1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ready-to-make__line2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.ready-to-make__subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* --- Right: CTA Button --- */
+.ready-to-make__cta {
+  flex: 0 0 auto;
+  margin-right: auto;
+  margin-left: 32px;
+}
+
+.ready-to-make__button {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #1A56DB;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  background: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  padding: 14px 28px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ready-to-make__button:hover,
+.ready-to-make__button:focus {
+  background: #EBF2FF;
+  outline: none;
+}
+
+/* --- Decorative sparkle --- */
+.ready-to-make__sparkle {
+  position: absolute;
+  bottom: 12px;
+  right: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+/* Tablet: 640px – 1023px — hide illustration */
+@media (max-width: 1023px) and (min-width: 640px) {
+  .ready-to-make__illustration {
+    display: none;
+  }
+
+  .ready-to-make__container {
+    gap: 20px;
+  }
+}
+
+/* Mobile: < 640px — stack vertically */
+@media (max-width: 639px) {
+  .ready-to-make__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .ready-to-make__illustration {
+    width: 120px;
+  }
+
+  .ready-to-make__illustration svg {
+    width: 120px;
+  }
+
+  .ready-to-make__line1,
+  .ready-to-make__line2 {
+    font-size: 22px;
+  }
+
+  .ready-to-make__button {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+}

@@ -1,0 +1,231 @@
+/* ============================================================
+   Navbar — Vegas Wash Co.
+   All selectors scoped to .navbar. No global resets.
+   Uses CSS variables from global.css
+   ============================================================ */
+
+/* ---------- Root element ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  transition: box-shadow 0.2s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Inner container ---------- */
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
+}
+
+/* ---------- Logo ---------- */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  width: 160px;
+}
+
+.navbar__logo-img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Desktop nav ---------- */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  color: #1F2937;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+}
+
+/* ---------- CTA button ---------- */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  white-space: nowrap;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+  flex-shrink: 0;
+}
+
+.navbar__cta:hover {
+  background: var(--color-primary-dark);
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.3);
+}
+
+.navbar__cta-arrow {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1;
+}
+
+/* ---------- Hamburger button ---------- */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.navbar__hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #111827;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Animate hamburger → X when open */
+.navbar__hamburger[aria-expanded="true"] .navbar__hamburger-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__hamburger[aria-expanded="true"] .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.navbar__hamburger[aria-expanded="true"] .navbar__hamburger-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---------- Mobile dropdown menu ---------- */
+.navbar__mobile-menu {
+  display: none;
+  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar__mobile-menu.open {
+  display: block;
+}
+
+.navbar__mobile-links {
+  list-style: none;
+  margin: 0;
+  padding: 12px 0 20px;
+}
+
+.navbar__mobile-links li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar__mobile-links li:last-child {
+  border-bottom: none;
+  padding: 16px 24px 4px;
+}
+
+.navbar__mobile-link {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: var(--fw-semibold);
+  color: #1F2937;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 14px 24px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.navbar__mobile-link:hover,
+.navbar__mobile-link.active {
+  color: var(--color-primary);
+  background: #F0F5FF;
+}
+
+/* CTA inside mobile menu — full width */
+.navbar__cta--mobile {
+  width: 100%;
+  justify-content: center;
+  font-size: 14px;
+  padding: 12px 20px;
+}
+
+/* ---------- Responsive ---------- */
+
+/* Tablet + Desktop (>= 640px): show nav, hide hamburger */
+@media (min-width: 640px) {
+  .navbar__hamburger {
+    display: none !important;
+  }
+  .navbar__nav {
+    display: flex;
+  }
+  .navbar__cta {
+    display: inline-flex;
+  }
+  .navbar__mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Mobile (< 640px): hide nav links + desktop CTA, show hamburger */
+@media (max-width: 639px) {
+  .navbar__nav {
+    display: none;
+  }
+  .navbar__cta:not(.navbar__cta--mobile) {
+    display: none;
+  }
+  .navbar__hamburger {
+    display: flex;
+  }
+}

@@ -1,0 +1,115 @@
+/* ============================================================
+   Vegas Wash Co. — Global Styles
+   Design tokens, reset, base, and utility classes only.
+   No section-specific rules.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Google Fonts
+   ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600;700;800;900&display=swap');
+
+/* ------------------------------------------------------------
+   2. CSS Reset
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------
+   3. CSS Custom Properties
+   ------------------------------------------------------------ */
+:root {
+
+  /* --- Colors --- */
+  --color-primary:        #1A56DB;
+  --color-primary-dark:   #1641B0;
+  --color-primary-light:  #EBF2FF;
+  --color-dark-navy:      #0F1F3D;
+  --color-text-black:     #111827;
+  --color-text-dark:      #1F2937;
+  --color-text-body:      #374151;
+  --color-text-muted:     #6B7280;
+  --color-white:          #FFFFFF;
+  --color-border:         #E5E7EB;
+  --color-bg-light:       #F9FAFB;
+  --color-before-badge:   #1F2937;
+  --color-after-badge:    #1A56DB;
+
+  /* --- Typography --- */
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* --- Font Weights --- */
+  --fw-regular:   400;
+  --fw-medium:    500;
+  --fw-semibold:  600;
+  --fw-bold:      700;
+  --fw-extrabold: 800;
+  --fw-black:     900;
+
+  /* --- Spacing Scale --- */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* --- Border Radii --- */
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-pill: 24px;
+
+  /* --- Shadows --- */
+  --shadow-card:      0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-cta-hover: 0 4px 16px rgba(26, 86, 219, 0.3);
+  --shadow-slider:    0 2px 8px rgba(0, 0, 0, 0.25);
+
+  /* --- Breakpoints (reference comments — use in @media queries)
+     Mobile:  < 640px
+     Tablet:  640px – 1023px
+     Desktop: >= 1024px
+  ----------------------------------------------------------- */
+}
+
+/* ------------------------------------------------------------
+   4. Base Styles
+   ------------------------------------------------------------ */
+html {
+  font-size: 17px;
+  font-family: var(--font-body);
+  color: var(--color-text-black);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-weight: 600;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ------------------------------------------------------------
+   5. Container Utility
+   ------------------------------------------------------------ */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

@@ -1,0 +1,315 @@
+/* ============================================================
+   Package Section — The Instant Curb Appeal Package
+   Scoped entirely under .package
+   ============================================================ */
+
+.package {
+  background: #FFFFFF;
+  padding: 24px 24px;
+}
+
+.package__container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.package__card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #E5E7EB;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  min-height: 260px;
+}
+
+/* ---- Left Column: House Photo ---- */
+.package__photo {
+  flex: 0 0 28%;
+  background-image: url('../../Design Images/Clean Driveway Image.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 240px;
+  border-radius: 12px 0 0 12px;
+}
+
+/* ---- Middle Column: Package Details ---- */
+.package__details {
+  flex: 1 1 44%;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  background-color: #EBF2FF;
+}
+
+.package__heading {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.package__heading-line1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.package__heading-line2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #1A56DB;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.package__middle-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+/* Price Block */
+.package__price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  padding-right: 20px;
+}
+
+.package__starting-at {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+.package__price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  color: #1A56DB;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Vertical Divider */
+.package__divider {
+  width: 1px;
+  align-self: stretch;
+  background-color: #E5E7EB;
+  margin: 0 20px;
+  flex-shrink: 0;
+}
+
+/* Checklist */
+.package__checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.package__checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.package__check-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.package__checklist-item span {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* ---- Right Column: Perfect For Panel ---- */
+.package__perfect-for {
+  flex: 0 0 28%;
+  background-color: #EBF2FF;
+  border-radius: 0 12px 12px 0;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.package__perfect-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A56DB;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.package__perfect-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.package__perfect-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.package__perfect-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.package__perfect-item span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* CTA Button */
+.package__cta-btn {
+  display: block;
+  width: 100%;
+  background-color: #1A56DB;
+  color: #FFFFFF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.package__cta-btn:hover,
+.package__cta-btn:focus {
+  background-color: #1641B0;
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.35);
+  outline: none;
+}
+
+/* ============================================================
+   Responsive — Tablet (640px – 1023px)
+   ============================================================ */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .package__card {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .package__photo {
+    flex: none;
+    width: 100%;
+    min-height: 220px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .package__details {
+    flex: none;
+    width: 100%;
+    padding: 24px;
+  }
+
+  .package__perfect-for {
+    flex: none;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    padding: 24px;
+  }
+}
+
+/* ============================================================
+   Responsive — Mobile (< 640px)
+   ============================================================ */
+@media (max-width: 639px) {
+  .package {
+    padding: 32px 16px;
+  }
+
+  .package__card {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .package__photo {
+    flex: none;
+    width: 100%;
+    min-height: 200px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .package__details {
+    flex: none;
+    width: 100%;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .package__heading-line1 {
+    font-size: 22px;
+  }
+
+  .package__heading-line2 {
+    font-size: 26px;
+  }
+
+  .package__middle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .package__price-block {
+    padding-right: 0;
+  }
+
+  .package__price {
+    font-size: 52px;
+  }
+
+  .package__divider {
+    display: none;
+  }
+
+  .package__perfect-for {
+    flex: none;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    padding: 20px 16px;
+  }
+
+  .package__cta-btn {
+    width: 100%;
+  }
+}

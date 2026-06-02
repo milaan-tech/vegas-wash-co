@@ -1,0 +1,321 @@
+/* ============================================================
+   Hero Section — scoped to .hero
+   ============================================================ */
+
+.hero {
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.hero__container {
+  display: flex;
+  align-items: stretch;
+  min-height: 440px;
+  max-width: 100%;
+}
+
+/* ── Left Panel ─────────────────────────────────────────── */
+
+.hero__left {
+  flex: 0 0 38%;
+  width: 38%;
+  background: #ffffff;
+  padding: 36px 40px 32px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.hero__headline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero__headline--black {
+  color: #111827;
+}
+
+.hero__headline--blue {
+  color: #1A56DB;
+}
+
+.hero__subtext {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  line-height: 1.55;
+  margin-top: 16px;
+  max-width: 380px;
+}
+
+.hero__cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  background: #1A56DB;
+  color: #ffffff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 10px;
+  align-self: flex-start;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__cta:hover,
+.hero__cta:focus {
+  background: #1641B0;
+  box-shadow: 0 4px 14px rgba(26, 86, 219, 0.35);
+  outline: none;
+}
+
+/* Trust Bar */
+
+.hero__trust-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 24px;
+}
+
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.hero__trust-icon {
+  flex-shrink: 0;
+}
+
+.hero__trust-divider {
+  width: 1px;
+  height: 20px;
+  background: #D1D5DB;
+  margin: 0 16px;
+}
+
+/* ── Right Panel ─────────────────────────────────────────── */
+
+.hero__right {
+  flex: 0 0 62%;
+  width: 62%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* White fade bleeding in from the left edge of the image */
+.hero__right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0) 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ── Before/After Slider ─────────────────────────────────── */
+
+.hero__ba-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+}
+
+/* Before — base layer, fills container */
+.hero__ba-before {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.hero__ba-before img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+}
+
+/* After — clipped layer, initially reveals right 50% */
+.hero__ba-after {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  clip-path: inset(0 0 0 50%);
+  transition: clip-path 0s; /* no transition during drag */
+}
+
+.hero__ba-after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  pointer-events: none;
+}
+
+/* Label Pills */
+.hero__ba-label {
+  position: absolute;
+  bottom: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  padding: 4px 14px;
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero__ba-label--before {
+  left: 12px;
+  background: #1F2937;
+}
+
+.hero__ba-label--after {
+  right: 12px;
+  background: #1A56DB;
+}
+
+/* Handle */
+.hero__ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+.hero__ba-handle:focus {
+  outline: none;
+}
+
+.hero__ba-handle-line {
+  flex: 1;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hero__ba-handle-btn {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #D1D5DB;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  cursor: ew-resize;
+  padding: 0;
+  pointer-events: none;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+/* Tablet: 640–1023px — stack vertically, image above text */
+@media (max-width: 1023px) {
+  .hero__container {
+    flex-direction: column-reverse;
+    min-height: auto;
+  }
+
+  .hero__left {
+    flex: none;
+    width: 100%;
+    padding: 32px 24px 36px;
+  }
+
+  .hero__right {
+    flex: none;
+    width: 100%;
+  }
+
+  .hero__right::before {
+    display: none;
+  }
+
+  .hero__ba-slider {
+    min-height: 340px;
+  }
+
+  .hero__headline {
+    font-size: 40px;
+  }
+}
+
+/* Mobile: < 640px */
+@media (max-width: 639px) {
+  .hero__left {
+    padding: 28px 20px 32px;
+  }
+
+  .hero__headline {
+    font-size: 34px;
+  }
+
+  .hero__ba-slider {
+    min-height: 260px;
+  }
+
+  .hero__trust-bar {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .hero__trust-divider {
+    display: none;
+  }
+
+  .hero__trust-item {
+    width: 100%;
+  }
+
+  .hero__cta {
+    width: 100%;
+    text-align: center;
+  }
+}

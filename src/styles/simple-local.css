@@ -1,0 +1,131 @@
+/* =============================================
+   Simple Local Affordable Section
+   ============================================= */
+
+.simple-local {
+  background: #EBF2FF;
+  padding: 28px 24px;
+}
+
+.simple-local__container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.simple-local__heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #0F2D6B;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 36px;
+}
+
+/* 4-column flex row */
+.simple-local__grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: nowrap;
+}
+
+/* Individual feature item: icon left, text right */
+.simple-local__item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 200px;
+  max-width: 240px;
+  flex: 1 1 200px;
+}
+
+/* Icon wrapper — no background, just the SVG */
+.simple-local__icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simple-local__icon svg {
+  width: 52px;
+  height: 52px;
+}
+
+/* Text block */
+.simple-local__text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.simple-local__title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.simple-local__body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* =============================================
+   Responsive — Tablet (640px–1023px): 2-col grid
+   ============================================= */
+@media (max-width: 1023px) and (min-width: 640px) {
+  .simple-local__grid {
+    flex-wrap: wrap;
+    gap: 24px 32px;
+    justify-content: center;
+  }
+
+  .simple-local__item {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+    min-width: 220px;
+  }
+}
+
+/* =============================================
+   Responsive — Mobile (< 640px): 1-col stack
+   ============================================= */
+@media (max-width: 639px) {
+  .simple-local {
+    padding: 32px 20px;
+  }
+
+  .simple-local__heading {
+    font-size: 26px;
+    margin-bottom: 28px;
+  }
+
+  .simple-local__grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .simple-local__item {
+    max-width: 100%;
+    min-width: 0;
+    flex: none;
+    gap: 12px;
+  }
+}

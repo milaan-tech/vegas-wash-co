@@ -1,0 +1,275 @@
+/* ============================================================
+   Contact Footer — Vegas Wash Co.
+   Scoped to: .contact-footer
+   ============================================================ */
+
+.contact-footer {
+  background-color: #0F1F3D;
+  width: 100%;
+}
+
+.contact-footer__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 28px 24px 0;
+}
+
+/* --- Four-column row ---------------------------------------- */
+
+.contact-footer__columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+/* --- Vertical dividers between columns ---------------------- */
+
+.contact-footer__divider {
+  width: 1px;
+  align-self: stretch;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+/* --- Shared column base ------------------------------------- */
+
+.contact-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-footer__col--logo  { flex: 0 0 22%; }
+.contact-footer__col--contact { flex: 0 0 28%; }
+.contact-footer__col--social  { flex: 0 0 22%; }
+.contact-footer__col--badge   { flex: 0 0 22%; }
+
+/* --- Column headings ---------------------------------------- */
+
+.contact-footer__col-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* --- Col 1: Logo + Tagline ---------------------------------- */
+
+.contact-footer__logo-link {
+  display: inline-block;
+  line-height: 0;
+}
+
+.contact-footer__logo-img {
+  height: 80px;
+  width: auto;
+  display: block;
+}
+
+.contact-footer__tagline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* --- Col 2: Contact list ------------------------------------ */
+
+.contact-footer__contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.contact-footer__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: 'Barlow', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.contact-footer__contact-link:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.contact-footer__icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* --- Col 3: Social icons ------------------------------------ */
+
+.contact-footer__social-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-footer__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-footer__social-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.contact-footer__social-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.contact-footer__social-btn--facebook {
+  background-color: #1877F2;
+}
+
+.contact-footer__social-btn--instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* --- Col 4: Licensed & Insured badge ----------------------- */
+
+.contact-footer__badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.contact-footer__shield-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.contact-footer__badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.contact-footer__badge-text span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --- Copyright bar ------------------------------------------ */
+
+.contact-footer__copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  padding: 16px 0 20px;
+  text-align: center;
+}
+
+.contact-footer__copyright p {
+  font-family: 'Barlow', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ============================================================
+   Responsive — Tablet (640px – 1023px)
+   ============================================================ */
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  .contact-footer__columns {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 24px 0;
+  }
+
+  .contact-footer__divider {
+    display: none;
+  }
+
+  .contact-footer__col--logo {
+    flex: 0 0 48%;
+    padding-right: 16px;
+  }
+
+  .contact-footer__col--contact {
+    flex: 0 0 48%;
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .contact-footer__col--social {
+    flex: 0 0 48%;
+    padding-right: 16px;
+  }
+
+  .contact-footer__col--badge {
+    flex: 0 0 48%;
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* ============================================================
+   Responsive — Mobile (< 640px)
+   ============================================================ */
+
+@media (max-width: 639px) {
+  .contact-footer__container {
+    padding: 28px 16px 0;
+  }
+
+  .contact-footer__columns {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .contact-footer__divider {
+    display: none;
+  }
+
+  .contact-footer__col--logo,
+  .contact-footer__col--contact,
+  .contact-footer__col--social,
+  .contact-footer__col--badge {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .contact-footer__badge {
+    display: inline-flex;
+    width: auto;
+  }
+}

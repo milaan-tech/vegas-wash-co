@@ -1,0 +1,166 @@
+/* =========================================
+   Proudly Serving Section
+   ========================================= */
+
+.proudly-serving {
+  position: relative;
+  width: 100%;
+  background-image: url('../../Design Images/Las Vegas - Summerlin Background Image.png');
+  background-color: #0F1F3D;
+  background-size: cover;
+  background-position: center center;
+  padding: 24px 24px;
+  overflow: hidden;
+}
+
+/* Dark overlay */
+.proudly-serving::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* Container */
+.proudly-serving__container {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ---- Floating pin circle ---- */
+.proudly-serving__pin-circle {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 68px;
+  height: 68px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+/* ---- Joined Box ---- */
+.proudly-serving__box {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  margin-left: 36px;
+}
+
+/* ---- Text Column ---- */
+.proudly-serving__text-col {
+  flex: 1 1 auto;
+  padding: 28px 32px 28px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.proudly-serving__label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1A56DB;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+}
+
+.proudly-serving__title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #1A56DB;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+}
+
+.proudly-serving__body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- Map Column (right, flush) ---- */
+.proudly-serving__map {
+  flex: 0 0 45%;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.proudly-serving__map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
+   Responsive — Tablet (640px – 1023px)
+   ========================================= */
+@media (max-width: 1023px) {
+  .proudly-serving__box {
+    flex-direction: column;
+  }
+
+  .proudly-serving__pin-col {
+    border-right: none;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 20px;
+  }
+
+  .proudly-serving__map {
+    flex: none;
+    width: 100%;
+    min-height: 200px;
+  }
+}
+
+/* =========================================
+   Responsive — Mobile (< 640px)
+   ========================================= */
+@media (max-width: 639px) {
+  .proudly-serving {
+    padding: 24px 16px;
+  }
+
+  .proudly-serving__text-col {
+    padding: 20px;
+  }
+
+  .proudly-serving__label {
+    font-size: 16px;
+  }
+
+  .proudly-serving__title {
+    font-size: 22px;
+  }
+
+  .proudly-serving__body {
+    font-size: 14px;
+  }
+
+  .proudly-serving__map {
+    min-height: 180px;
+  }
+}

@@ -1,0 +1,235 @@
+/* ================================================
+   Garbage Can Refresh Section
+   ================================================ */
+
+.garbage-can {
+  background: linear-gradient(to right, #0F1F3D, #1A3A6B);
+  padding: 0 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.garbage-can__container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-height: 180px;
+}
+
+/* ---- Left: Photo + Badge ---- */
+.garbage-can__photo {
+  position: relative;
+  flex: 0 0 auto;
+  width: 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.garbage-can__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.garbage-can__badge {
+  position: absolute;
+  bottom: 10px;
+  right: -28px;
+  width: 110px;
+  height: 110px;
+  background: #1A56DB;
+  border: 4px solid #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  line-height: 1;
+  z-index: 2;
+}
+
+/* ---- Middle: Text Content ---- */
+.garbage-can__content {
+  flex: 1 1 auto;
+  padding-left: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.garbage-can__heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 38px;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.01em;
+}
+
+.garbage-can__tag {
+  display: inline-block;
+  align-self: flex-start;
+  background: #FFFFFF;
+  color: #1A56DB;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 6px 18px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.garbage-can__body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #CBD5E1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- Right: CTA Button ---- */
+.garbage-can__cta-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 40px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.garbage-can__cta {
+  display: inline-block;
+  background: transparent;
+  border: 3px solid #FFFFFF;
+  color: #FFFFFF;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 24px;
+  border-radius: 12px;
+  white-space: nowrap;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.garbage-can__cta:hover {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
+}
+
+/* ================================================
+   Responsive
+   ================================================ */
+
+/* Tablet: 640px – 1023px */
+@media (max-width: 1023px) {
+  .garbage-can {
+    padding: 24px 24px;
+  }
+
+  .garbage-can__container {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .garbage-can__photo {
+    width: 200px;
+  }
+
+  .garbage-can__badge {
+    width: 76px;
+    height: 76px;
+    font-size: 34px;
+    right: -16px;
+  }
+
+  .garbage-can__content {
+    flex: 1 1 200px;
+    padding-left: 32px;
+  }
+
+  .garbage-can__heading {
+    font-size: 30px;
+  }
+
+  .garbage-can__cta-wrap {
+    flex: 0 0 auto;
+    padding-left: 0;
+    margin-left: auto;
+  }
+}
+
+/* Mobile: < 640px */
+@media (max-width: 639px) {
+  .garbage-can {
+    padding: 28px 16px;
+  }
+
+  .garbage-can__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .garbage-can__photo {
+    width: 220px;
+  }
+
+  .garbage-can__badge {
+    bottom: 8px;
+    right: -10px;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .garbage-can__content {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .garbage-can__tag {
+    align-self: center;
+  }
+
+  .garbage-can__heading {
+    font-size: 28px;
+  }
+
+  .garbage-can__cta-wrap {
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .garbage-can__cta {
+    width: 100%;
+    max-width: 280px;
+    font-size: 18px;
+    padding: 16px 28px;
+  }
+}

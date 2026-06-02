@@ -4,207 +4,181 @@ A professional pressure washing service landing page for Summerlin & Las Vegas, 
 
 ## Overview
 
-Vegas Wash Co. is a modern, fully responsive landing page website designed to showcase pressure washing services and convert visitors into customers. The site features an interactive before/after slider, service showcase, pricing, testimonials, and lead generation capabilities.
+Vegas Wash Co. is a modern, fully responsive landing page designed to showcase pressure washing services and convert visitors into customers. The site features an interactive before/after image slider, service packages, real results gallery, local service area map, and a lead generation CTA.
 
 ## Features
 
-- **Interactive Before/After Slider** — Drag or click to compare pressure washing results in real-time
+- **Interactive Before/After Slider** — Drag to compare pressure washing results in real-time (desktop fade effect, clean full-width on mobile)
 - **Mobile-First Design** — Fully responsive on all screen sizes with hamburger navigation
-- **Modern Typography** — Custom Google Fonts (Barlow & Barlow Condensed) for clean, professional aesthetics
-- **Service Showcase** — Highlights key offerings including driveways, patios, sidewalks, garage doors, and more
-- **Curb Appeal Package** — Featured pricing section with clear service breakdown
-- **Social Proof** — Customer testimonials and reviews section
-- **Lead Capture** — Free quote request form for customer inquiries
-- **Local Business Focus** — Emphasis on Summerlin & Las Vegas service area
+- **Modern Typography** — Google Fonts (Barlow & Barlow Condensed) throughout
+- **Curb Appeal Package** — Featured $99 package with checklist and "Perfect For" panel
+- **$9 Garbage Can Refresh** — Intro offer section with large product photo
+- **Real Results Gallery** — Before/after photo cards for Driveway, Sidewalk, Trash Can, Front Entry
+- **Proudly Serving Section** — Aerial background with joined info + map card and floating pin
+- **Contact Footer** — Logo, contact info, social links, Licensed & Insured badge
 
 ## Project Structure
+
 ```
 vegas-wash/
-├── index.html           # Main landing page HTML
-├── style.css            # Complete styling (responsive & interactive)
-├── script.js            # JavaScript for interactivity (mobile nav, before/after slider)
-├── README.md            # This file
-├── CLAUDE.md            # AI project context & skills
-├── Design Images/       # Asset library
-│   ├── MAIN IMAGE.png
-│   ├── Garage Before.png
-│   ├── Garage After.png
-│   ├── Clean Driveway Image.png
-│   ├── Driveway Refresh.png
-│   ├── Front Entry Boost.png
-│   ├── Sidewalk Cleanup.png
-│   ├── Trash Can in Water Image.png
-│   ├── Trash Can Refresh.png
-│   ├── Watergun.png
-│   ├── Las Vegas - Summerlin Background Image.png
-│   ├── Summerlin-Vegas Map.png
-│   └── Vector Icons/    # Custom icons for services
+├── index.html                           # Entry point — Vercel serves this from root
+├── CLAUDE.md                            # Claude developer context & build playbook
+├── README.md                            # This file
+├── Design Images/                       # All visual assets
+│   ├── Garage Before.png                # Hero before/after slider
+│   ├── Garage After.png                 # Hero before/after slider
+│   ├── Clean Driveway Image.png         # Package section photo
+│   ├── Driveway Refresh.png             # Real Results card
+│   ├── Sidewalk Cleanup.png             # Real Results card
+│   ├── Trash Can Refresh.png            # Real Results card
+│   ├── Front Entry Boost.png            # Real Results card
+│   ├── Trash Can in Water Image.png     # Garbage Can section
+│   ├── Watergun.png                     # Ready To Make illustration
+│   ├── Summerlin-Vegas Map.png          # Proudly Serving map
+│   ├── Las Vegas - Summerlin Background Image.png  # Proudly Serving background
+│   ├── High Resolution Sections/        # Design reference screenshots (11 sections)
+│   │   ├── Navbar.jpg
+│   │   ├── Hero Section.jpg
+│   │   ├── Package.jpg
+│   │   ├── Vegas Dust, Dirt And Heat.jpg
+│   │   ├── What We Clean.jpg
+│   │   ├── Garbage Can Refresh.jpg
+│   │   ├── Real Results You Can See.jpg
+│   │   ├── Simple Local Affordable.jpg
+│   │   ├── Proudly Serving.jpg
+│   │   ├── Ready To Make Your Home.jpg
+│   │   └── Contact Us.jpg
+│   └── Vector Icons/                    # Custom PNG icon assets
 │       ├── logo_vector.png
+│       ├── logo_vector_white.png        # Footer logo (white version)
 │       ├── driveways_vector.png
-│       ├── patios_vector.png
 │       ├── sidewalks_vector.png
+│       ├── patios_vector.png
+│       ├── front_entryways_vector.png
 │       ├── garage_doors_vector.png
 │       ├── trash_cans_vector.png
 │       ├── pool_decks_vector.png
 │       ├── hoa_cleanup_vector.png
 │       ├── fast_response_vector.png
 │       ├── clear_pricing_vector.png
-│       ├── local_service_vector.png
 │       ├── no_pushy_sales_vector.png
-│       ├── shield_vector.png
-│       ├── location_pin_vector.png
+│       ├── local_service_vector.png
 │       ├── sun_icon_vector.png
+│       ├── location_pin_vector.png
+│       ├── shield_vector.png
 │       ├── facebook_vector.png
 │       └── instagram_vector.png
-└── .claude/             # Claude development settings
-├── settings.json
-└── skills/
-├── lead-generation/
-│   └── SKILL.md
-└── todo/
-└── tasks.md
+├── src/
+│   ├── index.html                       # src copy (kept in sync with root index.html)
+│   ├── components/                      # Individual section HTML files
+│   │   ├── Navbar.html                  # Section 1 — sticky nav + mobile menu
+│   │   ├── Hero.html                    # Section 2 — before/after slider
+│   │   ├── Package.html                 # Section 3 — Curb Appeal Package $99
+│   │   ├── VegasDust.html               # Section 4 — Vegas Dust, Dirt & Heat
+│   │   ├── WhatWeClean.html             # Section 5 — service icon grid
+│   │   ├── GarbageCan.html              # Section 6 — $9 Garbage Can Refresh
+│   │   ├── RealResults.html             # Section 7 — before/after photo cards
+│   │   ├── SimpleLocal.html             # Section 8 — Simple. Local. Affordable.
+│   │   ├── ProudlyServing.html          # Section 9 — map + service area
+│   │   ├── ReadyToMake.html             # Section 10 — CTA banner
+│   │   └── ContactFooter.html           # Section 11 — footer with contact info
+│   ├── styles/
+│   │   ├── global.css                   # CSS variables, reset, base styles, Google Fonts
+│   │   ├── navbar.css                   # Section 1
+│   │   ├── hero.css                     # Section 2
+│   │   ├── package.css                  # Section 3
+│   │   ├── vegas-dust.css               # Section 4
+│   │   ├── what-we-clean.css            # Section 5
+│   │   ├── garbage-can.css              # Section 6
+│   │   ├── real-results.css             # Section 7
+│   │   ├── simple-local.css             # Section 8
+│   │   ├── proudly-serving.css          # Section 9
+│   │   ├── ready-to-make.css            # Section 10
+│   │   └── contact-footer.css           # Section 11
+│   └── js/
+│       ├── main.js                      # Bundled JS — inits all sections on DOMContentLoaded
+│       ├── navbar.js                    # Sticky scroll + hamburger toggle
+│       ├── hero.js                      # Before/after slider drag logic
+│       ├── package.js                   # Package CTA smooth scroll
+│       ├── vegas-dust.js
+│       ├── what-we-clean.js
+│       ├── garbage-can.js
+│       ├── real-results.js
+│       ├── simple-local.js
+│       ├── proudly-serving.js
+│       ├── ready-to-make.js
+│       └── contact-footer.js
+└── .claude/                             # Claude development tools
+    ├── settings.json
+    ├── DESIGN_SYSTEM.md                 # Colors, fonts, spacing, component tokens
+    ├── SPEC_NAVBAR.md
+    ├── SPEC_HERO.md
+    ├── SPEC_PACKAGE.md
+    ├── SPEC_VEGAS_DUST.md
+    ├── SPEC_WHAT_WE_CLEAN.md
+    ├── SPEC_GARBAGE_CAN.md
+    ├── SPEC_REAL_RESULTS.md
+    ├── SPEC_SIMPLE_LOCAL_AFFORDABLE.md
+    ├── SPEC_PROUDLY_SERVING.md
+    ├── SPEC_READY_TO_MAKE.md
+    ├── SPEC_CONTACT_FOOTER.md
+    └── skills/
+        └── todo/
+            └── tasks.md
 ```
 
-## Technical Details
+## Technology Stack
 
-### Technology Stack
+| Layer | Technology | Details |
+|-------|-----------|---------|
+| **Markup** | HTML5 | Semantic, accessible, no build step |
+| **Styling** | CSS3 | Flexbox/Grid, CSS variables, responsive breakpoints |
+| **Interactivity** | Vanilla JavaScript | No frameworks, plain `<script defer>` |
+| **Fonts** | Google Fonts API | Barlow & Barlow Condensed (400–900) |
+| **Images** | PNG | Section photos + vector icon set |
 
-- **HTML5** — Semantic, accessible markup
-- **CSS3** — Modern styling with flexbox/grid, responsive breakpoints, CSS variables
-- **Vanilla JavaScript** — No dependencies; lightweight interactivity
-- **Google Fonts API** — Barlow & Barlow Condensed typefaces
+## Navbar Link Routing
 
-### Key Components
-
-#### 1. Header & Navigation
-- Fixed header with logo and navigation menu
-- Responsive hamburger menu for mobile devices
-- Call-to-action "Get My Free Quote" button
-
-#### 2. Hero Section
-- Full-width interactive before/after image slider
-- Compelling headline with blue accent text
-- Value proposition messaging
-- Trust badges (Fast Quotes, Local Service, Area Coverage)
-
-#### 3. Service Showcase
-- Grid layout of service offerings with vector icons
-- Each service has descriptive text and visual representation
-
-#### 4. Curb Appeal Package
-- Feature package section with large photo
-- Pricing display with monthly breakdown
-- Complete service checklist
-- Call-to-action button
-
-#### 5. How It Works
-- 3-step process visualization
-- Clear, action-oriented messaging
-
-#### 6. Reviews Section
-- Customer testimonials with ratings
-- Trust-building social proof
-
-#### 7. Contact Form
-- Lead capture form
-- Field validation
-- Integration-ready for backend processing
-
-### Interactive Features
-
-**Before/After Slider:**
-- Draggable handle with visual feedback
-- Click anywhere to reposition
-- Touch-friendly on mobile devices
-- Smooth clip-path animation
-
-**Mobile Navigation:**
-- Hamburger menu toggle
-- Auto-closes on link click
-- Full mobile responsiveness
+| Link | Scrolls To |
+|------|-----------|
+| SERVICES | Curb Appeal Package (`#how-it-works`) |
+| ABOUT US | Proudly Serving (`#proudly-serving`) |
+| HOW IT WORKS | Real Results (`#reviews`) |
+| REVIEWS | Proudly Serving (`#proudly-serving`) |
+| CONTACT | Contact Footer (`#contact`) |
 
 ## Setup & Usage
 
-### Prerequisites
-- No build process or dependencies required
-- Works with any web server or local file system
-
-### Deployment
-
-1. **Local Testing:**
-```bash
-   # Simply open in a browser
-   open index.html
-   
-   # Or use a local server
-   python -m http.server 8000
+### Open Locally
+No build process required — open directly in a browser:
+```
+src/index.html
 ```
 
-2. **Production Deployment:**
-   - Upload all files to your web host maintaining directory structure
-   - Ensure image paths are correct for your server environment
-   - Update form action in contact section to your backend endpoint
-   - Configure CDN for images if desired
+### Run on a Local Server (recommended for full JS support)
+```bash
+npx serve .
+# then visit http://localhost:3000/src/
+```
 
-### Configuration
+### Deployment
+Upload the entire repo to any static web host (Netlify, Vercel, GitHub Pages, etc.). The entry point is `src/index.html`.
 
-**Update Business Information:**
-- Edit company name, phone, and email in `index.html`
-- Modify service descriptions and pricing as needed
-- Replace images with your own pressure washing before/afters
-- Update social media links in footer
+### Update Business Info
+- Phone / email / website: edit `src/components/ContactFooter.html` and `src/index.html`
+- Social links: update `href` on Facebook/Instagram anchors in the footer
+- Service area copy: `src/components/ProudlyServing.html`
+- Pricing: `src/components/Package.html`
 
-**Customize Colors:**
-- Primary blue: `#2563eb` (search style.css and replace)
-- Dark slate: `#1e293b`
-- Light backgrounds: `#f8fafc`
+### Customize Colors
+All color tokens live in `src/styles/global.css` under `:root`:
+- Primary blue: `--color-primary: #1A56DB`
+- Dark navy: `--color-dark-navy: #0F1F3D`
+- Light blue bg: `--color-primary-light: #EBF2FF`
 
 ## Browser Support
 
 - Chrome/Edge 90+
 - Firefox 88+
 - Safari 14+
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance Optimization
-
-- Minify CSS and JavaScript for production
-- Optimize images (compress PNGs, consider WebP)
-- Lazy load below-fold images for faster initial load
-- Consider CDN for global delivery
-
-## Future Enhancements
-
-- Add backend form processing
-- Implement real-time quote calculator
-- Add service booking calendar
-- Integrate Google Maps
-- Implement live chat support
-- Add customer photo gallery
-- SEO optimization and blog section
-- Payment processing for deposits
-
-## SEO Considerations
-
-The site includes:
-- Semantic HTML structure
-- Meta tags for social sharing
-- Descriptive alt text on images
-- Clear heading hierarchy
-- Mobile-responsive design
-
-Recommendations:
-- Add schema markup for LocalBusiness
-- Create XML sitemap
-- Submit to Google Search Console
-- Implement analytics tracking
-- Add Google Business Profile
-
-## Accessibility
-
-- Semantic HTML elements
-- ARIA labels on interactive controls
-- High contrast text colors
-- Touch-friendly button sizes (min 44px)
-- Mobile navigation accessibility
-- Form labels associated with inputs
+- iOS Safari & Chrome Mobile
