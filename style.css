@@ -323,32 +323,98 @@ a { text-decoration: none; color: inherit; }
 
 /* ── Responsive ───────────────────────────────────── */
 @media (max-width: 1024px) {
-  .clean-grid { grid-template-columns: repeat(4,1fr); }
+  .clean-grid { grid-template-columns: repeat(4, 1fr); }
   .package__card { grid-template-columns: 220px 1fr; }
   .package__for { display: none; }
-  .footer__inner { grid-template-columns: 1fr 1fr; }
+  .footer__inner { grid-template-columns: 1fr 1fr; gap: 20px; }
 }
+
 @media (max-width: 768px) {
+  /* Header */
   .nav, .header .btn { display: none; }
   .hamburger { display: flex; }
-  .hero__inner { grid-template-columns: 1fr; min-height: auto; padding: 40px 24px; }
-  .hero__left { padding: 32px 28px; }
+
+  /* Push slider handle circle to the bottom so it's visible below the text */
+  .hero__bg-slider .ba-handle-line:first-child { flex: 16; }
+  .hero__bg-slider .ba-handle-line:last-child  { flex: 1; }
+
+  /* Hero — switch gradient to vertical so text stays readable over the full-width slider */
+  .hero__bg-slider::after {
+    background: linear-gradient(to bottom,
+      rgba(221,232,245,.96) 0%,
+      rgba(221,232,245,.85) 55%,
+      rgba(221,232,245,.50) 100%);
+  }
+  .hero__inner { grid-template-columns: 1fr; min-height: auto; padding: 40px 24px 60px; }
+  .hero__left { padding: 24px 0; max-width: 100%; }
+  .hero__sub { max-width: 100%; }
+  .hero__badges { flex-wrap: wrap; gap: 6px; }
+  .hero__sep { display: none; }
+
+  /* Package — restore the hidden "Perfect For" section now that card is single column */
   .package__card { grid-template-columns: 1fr; }
   .package__photo { min-height: 220px; }
-  .dust__inner { grid-template-columns: 1fr; }
-  .clean-grid { grid-template-columns: repeat(4,1fr); }
+  .package__for { display: flex; }
+
+  /* Dust — hide vertical divider, remove excessive right padding */
+  .dust__inner { grid-template-columns: 1fr; gap: 16px; }
+  .dust__left { padding-right: 0; }
+  .dust__divider { display: none; }
+
+  /* Services grid */
+  .clean-grid { grid-template-columns: repeat(4, 1fr); }
+
+  /* $9 offer */
   .offer9__photo { display: none; }
-  .results__grid { grid-template-columns: repeat(2,1fr); }
-  .pillars__grid { grid-template-columns: repeat(2,1fr); }
+  .offer9__inner { flex-wrap: wrap; justify-content: center; gap: 12px; padding: 20px 16px; }
+  .offer9__badge { margin: 0; }
+  .offer9__content { padding: 8px 12px; text-align: center; }
+  .offer9__cta { padding: 0; width: 100%; text-align: center; }
+  .offer9__btn { white-space: normal; width: 100%; max-width: 220px; }
+
+  /* Results */
+  .results__grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Pillars */
+  .pillars__grid { grid-template-columns: repeat(2, 1fr); }
+  .pillar--divider { border-left: 1px solid var(--gray2); }
+
+  /* Serving */
   .serving__card { grid-template-columns: 1fr; }
   .serving__map { display: none; }
-  .footer-cta__inner { flex-direction: column; text-align: center; }
-  .footer__inner { grid-template-columns: 1fr 1fr; }
+
+  /* Footer CTA */
+  .footer-cta__inner { flex-direction: column; text-align: center; gap: 16px; }
+  .footer-cta__icon { display: none; }
+
+  /* Footer */
+  .footer__inner { grid-template-columns: 1fr 1fr; gap: 20px; padding-top: 20px; padding-bottom: 16px; }
+  .footer__contact { padding: 0; }
+  .footer__divider { display: none; }
+  .footer__social { padding-right: 0; }
 }
+
 @media (max-width: 480px) {
-  .clean-grid { grid-template-columns: repeat(4,1fr); }
+  /* Services grid — 2 columns on small phones so icons aren't crushed */
+  .clean-grid { grid-template-columns: repeat(2, 1fr); }
+  .clean-icon-img { width: 56px; height: 56px; }
+
+  /* Results */
   .results__grid { grid-template-columns: 1fr 1fr; }
-  .footer__inner { grid-template-columns: 1fr; }
+
+  /* Pillars — single column, swap border-left for border-top */
+  .pillars__grid { grid-template-columns: 1fr; }
+  .pillar--divider { border-left: none; border-top: 1px solid var(--gray2); }
+
+  /* Footer — stack everything centered */
+  .footer__inner { grid-template-columns: 1fr; gap: 24px; }
+  .footer__brand { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .footer__tagline { text-align: center; }
+  .footer__contact { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0; }
+  .footer__contact a { justify-content: center; font-size: 14px; }
+  .footer__social { display: flex; flex-direction: column; align-items: center; text-align: center; padding-right: 0; }
+  .social-links { justify-content: center; }
+  .footer__badge { display: flex; justify-content: center; }
 }
 
 /* Mobile nav open */

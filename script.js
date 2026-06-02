@@ -21,9 +21,10 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.cla
   }
 
   handle.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
-  handle.addEventListener('touchstart', e => { dragging = true; }, { passive: true });
+  handle.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
+  wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: false });
   document.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-  document.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); setPos(e.touches[0].clientX); } }, { passive: false });
   document.addEventListener('mouseup',  () => { dragging = false; });
   document.addEventListener('touchend', () => { dragging = false; });
 
