@@ -156,13 +156,14 @@
 /* --- Col 4: Licensed & Insured badge ----------------------- */
 
 .contact-footer__badge {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
   border: 1.5px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
   padding: 12px 16px;
+  width: fit-content;
 }
 
 .contact-footer__shield-icon {
@@ -268,8 +269,4 @@
     width: 100%;
   }
 
-  .contact-footer__badge {
-    display: inline-flex;
-    width: auto;
-  }
 }

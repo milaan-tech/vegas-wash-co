@@ -162,13 +162,16 @@ npx serve .
 ```
 
 ### Deployment
-Upload the entire repo to any static web host (Netlify, Vercel, GitHub Pages, etc.). The entry point is `src/index.html`.
+Upload the entire repo to any static web host (Netlify, Vercel, GitHub Pages, etc.). The entry point is `index.html` at the root — no extra configuration needed.
 
 ### Update Business Info
-- Phone / email / website: edit `src/components/ContactFooter.html` and `src/index.html`
-- Social links: update `href` on Facebook/Instagram anchors in the footer
-- Service area copy: `src/components/ProudlyServing.html`
-- Pricing: `src/components/Package.html`
+- **Phone number:** find `(702) 123-4567` and `tel:+17021234567` in `index.html` — replace both with your real number
+- **Email address:** find `hello@vegaswashco.com` in `index.html` — replace with your real email
+- **Website URL:** find `https://vegaswashco.com` in `index.html` — replace with your real domain (appears in the footer link and in SEO meta tags)
+- **Facebook link:** find `href="https://facebook.com"` in `index.html` — replace with your real Facebook page URL
+- **Instagram link:** find `href="https://instagram.com"` in `index.html` — replace with your real Instagram profile URL
+- **Service area copy:** `src/components/ProudlyServing.html`
+- **Pricing:** `src/components/Package.html`
 
 ### Customize Colors
 All color tokens live in `src/styles/global.css` under `:root`:

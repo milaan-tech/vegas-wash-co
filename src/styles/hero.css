@@ -12,7 +12,8 @@
   display: flex;
   align-items: stretch;
   min-height: 440px;
-  max-width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 /* ── Left Panel ─────────────────────────────────────────── */

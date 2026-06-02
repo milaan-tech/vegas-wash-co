@@ -151,6 +151,12 @@
     font-size: 22px;
   }
 
+  .ready-to-make__cta {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
   .ready-to-make__button {
     width: 100%;
     text-align: center;
